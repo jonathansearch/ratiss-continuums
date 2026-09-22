@@ -22,3 +22,14 @@
 - C(t)=exp(−a·t²−b·t), R²>0.9996. a(grav) tient à 2/17/2 % (N=1/4/8),
   b(thermo)=κ à 0/12/5 %. Ni a(κ) ni b(G0) : chaque pilier garde sa loi.
   Leçon : 1 graine M=400 = bruit ±50 % → M=2000 × 5 graines. Fig plot_C03.
+
+## 2026-09-22 — Rafale C04→C09 : les 6 chantiers d'un coup (ordre chef)
+- C04 twist N : +1/−2/0/0/0/0 (@G0=1) — symétrie≥3 tue le twist, R→0.85.
+- C05 N condensateurs : P_fin 0.90→1.22, focal 3→2 — P_sig croît (décroissant).
+- C06 mémoire longue : t_half~15 puis plancher — ni expo ni puissance (R²~0).
+- C07 G N-corps : couplage érode G 0.13→0.02→0.0 ; N seul = plat.
+- C08 verrou QPU (kingston dapfgpgr7bnc73b3brpg) : écho tue a (1.2e−3→~0),
+  b persiste — factorisation C03 verrouillée hardware.
+- C09 seuil N : K=3 plat (pas de seuil) ; K=0.35 éventail critique flou.
+- Organes portés (copies) : conteneur/condensateur/porteurs + A.json.
+- Bugs assumés : C07-fig N=1 (barre manquante), C09 indentation K (2 lignes).
