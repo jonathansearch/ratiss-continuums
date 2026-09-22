@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="images/logo-ratiss-continuums.png" width="220" alt="RATISS Continuums"/>
+
 # 🌌 RATISS CONTINUUMS — le simulateur du tissu
 
 **Qiskit simule des amplitudes. Nous, on simule le tissu : cohérence topologique,
@@ -304,5 +306,7 @@ déplacements), nouvel animal. Filiation tracée test par test dans PROTOCOLES e
 
 Posé par **Jonathan Evina** · Septembre 2026 · **Licence MIT** (voir [LICENSE](LICENSE)) —
 simulateur ouvert, reproductible publiquement, prêt pour évaluation externe.
+
+<img src="images/logo-ratiss-continuums.png" width="120" alt="RATISS Continuums"/>
 
 </div>
