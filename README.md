@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/logo-ratiss-continuums.png" width="220" alt="RATISS Continuums"/>
+<img src="images/logo-ratiss-labs.png" width="220" alt="RATISS Labs"/>
 
 # 🌌 RATISS CONTINUUMS — le simulateur du tissu
 
@@ -69,6 +69,8 @@ Ce dépôt est ce simulateur, construit test par test — 9 à ce jour, 2 verrou
 sur QPU réel, tous reproductibles.
 
 ## 🧱 Les trois couches : moteur, coupleurs, seuils
+
+<img src="images/logo-ratiss-continuums.png" width="100%" alt="Le tissu : noeud tissé, frange au centre"/>
 
 | Couche | Contenu | Rôle mesuré |
 |---|---|---|
@@ -307,6 +309,6 @@ déplacements), nouvel animal. Filiation tracée test par test dans PROTOCOLES e
 Posé par **Jonathan Evina** · Septembre 2026 · **Licence MIT** (voir [LICENSE](LICENSE)) —
 simulateur ouvert, reproductible publiquement, prêt pour évaluation externe.
 
-<img src="images/logo-ratiss-continuums.png" width="120" alt="RATISS Continuums"/>
+<img src="images/logo-ratiss-labs.png" width="120" alt="RATISS Labs"/>
 
 </div>
