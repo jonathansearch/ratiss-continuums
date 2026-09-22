@@ -32,6 +32,54 @@
   les trois échelles FACTORISENT — chaque pilier garde sa loi, pas
   d'interaction détectée. Contrôles : G0/sw=0 → a=0, b=κ ; κ=0 → b=0.
 
+## C04 — Twist à N puits (extension 79/80/85, 2026-09-22)
+- **Méthode** : appareil twist focal à l'identique (anneau 24+hubs,
+  K=3, T=300, graines 55/100). N puits réguliers, N=1..6, G0=0/0.5/1.
+- **Observé** : réplique 1→+1, 2→−2, 3→0 (@G0=1) ; N=4/5/6 → twist 0,
+  R remonte à 0.81/0.84/0.85. Au-delà de 2, la symétrie tue le twist
+  et restaure la sync. Loi : twist(N≥3 symétrique)=0.
+
+## C05 — Focalisation à N condensateurs (extension TEST-04, 2026-09-22)
+- **Méthode** : organes+config A copiés. N injecteurs (flux total ∝ N,
+  assumé) + N groupes porteurs vers le même point focal, T=12.
+- **Observé** : P_fin = 0.90/1.02/1.11/1.22 (N=1/2/4/8), focalisation
+  étape 3/3/2/2, phi_max ×6. P_sig croît avec N (rendements
+  décroissants), la focalisation accélère.
+
+## C06 — Mémoire à long terme (extension TEST-70, TB=10⁴, 2026-09-22)
+- **Méthode** : RUQ-1 focal (graine 7001), phase A 400 groupés
+  (R_A=0.98 ✓), phase B dispersée TB=100/1000/10000. Fits H1 expo vs
+  H2 puissance sur R>0.05.
+- **Observé** : chute en t_half≈13-21 puis PLANCHER fluctuant
+  (R_fin=0.16/0.21/0.29 — monte avec TB par ré-échantillonnage).
+  R² expo/puissance ~0 : NI L'UNE NI L'AUTRE. La mémoire meurt en
+  ~15 pas, le reste est un plancher, pas une loi.
+
+## C07 — G à N corps (extension TEST-48, 2026-09-22)
+- **Méthode** : N tores 160 pts + pull vers centroïde global
+  (c=0/0.001/0.005), T=1500. G(N)=moy p_sig/PREF (200 derniers pas).
+- **Observé** : c=0 → G≈0.12-0.14 (plat en N) ; c=0.001 → G≈0.02 ;
+  c=0.005 → G=0.0 EXACT (mort topologique, fusion en blob).
+  Le couplage ÉRODE G dose-dépendant ; N seul ne change rien.
+  N=1 → 0.077 (noyau absolu focal ~0.083 ✓).
+
+## C08 — Verrou QPU du triangle (Ramsey vs écho, 2026-09-22)
+- **Méthode** : y=2P0−1=exp(−a·t²−b·t). Ramsey garde a+b, écho Hahn
+  refocalise le statique. 10 délais × 2, 1 job, 2000 shots.
+- **Observé** (ibm_kingston, job dapfgpgr7bnc73b3brpg) : Ramsey
+  a=1.17e−3 b=1.15e−2 (R²=0.998) ; écho a≈−1e−4 (~0 ✓) b=3.39e−2
+  (R²=0.94). L'écho TUE a, b persiste : verrou hardware de la
+  factorisation C03 (canal gaussien refocalisable, canal expo non).
+  Note : b_écho > b_ramsey (l'impulsion X ajoute son bruit, assumé).
+
+## C09 — Seuil de cohérence à N fini (sonde horizon, 2026-09-22)
+- **Méthode** : Kuramoto champ moyen, K=3.0 et 0.35 (près-critique),
+  σ=0.2, N=4..256, 5 graines. R_final(N). Aucun claim conscience.
+- **Observé** : K=3 → R=0.998 plat (PAS de seuil). K=0.35 → R chute
+  0.86→0.38 avec éventail inter-graines énorme : crossover critique
+  à N fini, pas de N_c franc. Le seuil n'existe que près de Kc, et
+  il est flou. Horizon-conscience : toujours horizon.
+
 ---
 *Exécution : `cd ratiss-continuums && python3 experiences/cNN_*.py`*
 *Réel : ajouter `--reel $TOKEN` (clé IBM, jamais commitée).* 🔒
