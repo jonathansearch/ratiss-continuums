@@ -33,3 +33,8 @@
 - C09 seuil N : K=3 plat (pas de seuil) ; K=0.35 éventail critique flou.
 - Organes portés (copies) : conteneur/condensateur/porteurs + A.json.
 - Bugs assumés : C07-fig N=1 (barre manquante), C09 indentation K (2 lignes).
+
+## 2026-09-22 — ARCHIVE IBM : C01+C08 rapatriés (resultats/jobs_ibm/)
+- Ordre chef : ne rien laisser sur la plateforme. 2 jobs attribués
+  (daper94 fez, dapfgpgr kingston), vérifiés bit-identiques. INDEX.json.
+  (64 autres jobs → focal, dont Berry v1 redécouvert.)
