@@ -19,6 +19,14 @@ décohérence thermodynamique, couplage GR×QM, géométrie.**
 
 <img src="images/plot_C01.png" width="100%" alt="C01 : les franges Berry de 2 qubits respirent ensemble"/>
 
+https://github.com/jonathansearch/ratiss-continuums/blob/main/images/demo-tissu.mp4
+
+<video width="100%" controls poster="https://raw.githubusercontent.com/jonathansearch/ratiss-continuums/main/images/demo-tissu.jpg">
+  <source src="https://raw.githubusercontent.com/jonathansearch/ratiss-continuums/main/images/demo-tissu.mp4" type="video/mp4">
+</video>
+
+[![Voir la démo 10 s](images/demo-tissu.jpg)](https://github.com/jonathansearch/ratiss-continuums/blob/main/images/demo-tissu.mp4)
+
 > **Abstract (EN).** *Other simulators evolve amplitudes; RATISS-CONTINUUMS simulates the
 > fabric: topological coherence, thermodynamic (ETH) decoherence, GR×QM coupling, and
 > geometric phase. Nine pre-registered tests (C01–C09), two IBM-QPU locks: entangled-2-qubit
