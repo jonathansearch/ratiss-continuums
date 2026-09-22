@@ -17,3 +17,8 @@
 - N=1/2/4/8 : 368.6/250.1/169.1/123.2 vs 339.6/240.1/169.8/120.1.
   Contrôles ∞, cross G0×2 → τ/2 (84.6/84.9). Loi d'échelle flagship
   du simulateur. Figure plot_C02.
+
+## 2026-09-22 — C03 MESURÉ : le triangle FACTORISE (pas d'interaction)
+- C(t)=exp(−a·t²−b·t), R²>0.9996. a(grav) tient à 2/17/2 % (N=1/4/8),
+  b(thermo)=κ à 0/12/5 %. Ni a(κ) ni b(G0) : chaque pilier garde sa loi.
+  Leçon : 1 graine M=400 = bruit ±50 % → M=2000 × 5 graines. Fig plot_C03.
