@@ -21,6 +21,17 @@
   dh/G0/sw=0 → ∞. Cross N=4 G0=0.2 → 84.6 (84.9, τ divisé par 2).
   Loi : 1/τ ∝ √N — la décohérence gravitationnelle accélère avec N.
 
+## C03 — Triangle RG×QM×Thermo (couplage des 3 échelles, 2026-09-22)
+- **Méthode** : base C02 + flux entropique ETH (Wiener par branche,
+  variance 2κ·dt — "pas de flux, pas de temps"). C(t)=exp(−a·t²−b·t),
+  fit 2-paramètres, M=2000, moyenne 5 graines (1 graine = bruit ±50 %,
+  assumé puis corrigé).
+- **Observé** : R²>0.9996 partout. a (grav) : N=1/4/8 à 2/17/2 % ;
+  b (thermo) : κ à 0/12/5 %. a ne bouge pas avec κ, b ne bouge pas
+  avec G0 (au résidu d'ajustement ~15 % près à N=4). VERDICT BENCH :
+  les trois échelles FACTORISENT — chaque pilier garde sa loi, pas
+  d'interaction détectée. Contrôles : G0/sw=0 → a=0, b=κ ; κ=0 → b=0.
+
 ---
 *Exécution : `cd ratiss-continuums && python3 experiences/cNN_*.py`*
 *Réel : ajouter `--reel $TOKEN` (clé IBM, jamais commitée).* 🔒
