@@ -19,6 +19,7 @@ animal. Filiation tracée dans `JOURNAL.md`, copies — jamais de déplacements.
 |---|---|---|
 | C01 | Berry à 2 qubits intriqués : les franges respirent-elles ensemble ? | ✅ MESURÉ (fez : ++ flips, +− plat, Z aveugle) |
 | C02 | RG×QM à N qubits : loi d'échelle de TEST-94 | ✅ MESURÉ (1/τ ∝ √N, N=1→8) |
+| C03 | Triangle RG×QM×Thermo : couplage des 3 échelles | ✅ MESURÉ (factorisation, R²>0.9996) |
 
 ## C01 — le pli est un tissu
 (++) : frange doublée avec flips complets (0.99/0.02 sur fez).
@@ -31,6 +32,11 @@ la frange n'existe qu'en corrélations.
 N=1→8 : 368.6/250.1/169.1/123.2. Contrôles ∞, G0×2 → τ/2.
 
 <img src="images/plot_C02.png" width="100%" alt="C02 : scaling sqrt(N)"/>
+
+## C03 — le triangle factorise
+a(grav) et b(thermo) gardent leurs lois : pas d'interaction détectée.
+
+<img src="images/plot_C03.png" width="100%" alt="C03 : factorisation"/>
 
 ## Règles (héritées du chef)
 Observation pure, zéro verdict vrai/faux. Français simple. MIT. Moyens zéro.
