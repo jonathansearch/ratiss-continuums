@@ -12,6 +12,15 @@
   La frange n'existe qu'en corrélations : les deux qubits respirent
   ensemble. Le pli est un tissu.
 
+## C02 — RG×QM à N qubits (loi d'échelle TEST-94, 2026-09-22)
+- **Méthode** : superposition à N qubits, branche A (tous à r0) vs B
+  (tous à r0+dh). Fréquences internes indépendantes w_j ~ N(1, sw).
+  Φ(t)=(Σw_j)·Δf·t intégrée pas à pas, M=400, T=1000.
+- **Observé** : τ_N = √2/(Δf·sw·√N) : N=1→368.6 (339.6), 2→250.1
+  (240.1), 4→169.1 (169.8), 8→123.2 (120.1). Contrôles N=8 :
+  dh/G0/sw=0 → ∞. Cross N=4 G0=0.2 → 84.6 (84.9, τ divisé par 2).
+  Loi : 1/τ ∝ √N — la décohérence gravitationnelle accélère avec N.
+
 ---
 *Exécution : `cd ratiss-continuums && python3 experiences/cNN_*.py`*
 *Réel : ajouter `--reel $TOKEN` (clé IBM, jamais commitée).* 🔒
