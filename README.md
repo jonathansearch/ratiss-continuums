@@ -2,22 +2,22 @@
 
 <img src="images/logo-ratiss-labs.png" width="220" alt="RATISS Labs"/>
 
-# 🌌 RATISS CONTINUUMS — le simulateur du tissu
+# 🌌 RATISS CONTINUUMS — the simulator of the fabric
 
-**Qiskit simule des amplitudes. Nous, on simule le tissu : cohérence topologique,
-décohérence thermodynamique, couplage GR×QM, géométrie.**
+**Qiskit simulates amplitudes. We simulate the fabric: topological coherence,
+thermodynamic decoherence, GR×QM coupling, geometry.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/Tests-C01%E2%80%93C09-teal.svg)](PROTOCOLES.md)
-[![QPU](https://img.shields.io/badge/verrous%20QPU-2-teal.svg)](PROTOCOLES.md)
+[![QPU](https://img.shields.io/badge/QPU%20locks-2-teal.svg)](PROTOCOLES.md)
 [![Stack](https://img.shields.io/badge/stack-numpy%20%2B%20qiskit%20%2B%20ripser-teal.svg)](organes/)
-[![Neurones](https://img.shields.io/badge/neurones-z%C3%A9ro-orange.svg)](organes/)
+[![Neurons](https://img.shields.io/badge/neurons-zero-orange.svg)](organes/)
 
-*Par **RATISS Labs** — Jonathan Evina · Licence MIT · Reproductibilité publique totale*
+*By **RATISS Labs** — Jonathan Evina · MIT License · Total public reproducibility*
 
 </div>
 
-<img src="images/plot_C01.png" width="100%" alt="C01 : les franges Berry de 2 qubits respirent ensemble"/>
+<img src="images/plot_C01.png" width="100%" alt="C01: the Berry fringes of 2 qubits breathe together"/>
 
 https://github.com/jonathansearch/ratiss-continuums/blob/main/images/demo-tissu.mp4
 
@@ -25,7 +25,7 @@ https://github.com/jonathansearch/ratiss-continuums/blob/main/images/demo-tissu.
   <source src="https://raw.githubusercontent.com/jonathansearch/ratiss-continuums/main/images/demo-tissu.mp4" type="video/mp4">
 </video>
 
-[![Voir la démo 10 s](images/demo-tissu.jpg)](https://github.com/jonathansearch/ratiss-continuums/blob/main/images/demo-tissu.mp4)
+[![Watch the 10 s demo](images/demo-tissu.jpg)](https://github.com/jonathansearch/ratiss-continuums/blob/main/images/demo-tissu.mp4)
 
 > **Abstract (EN).** *Other simulators evolve amplitudes; RATISS-CONTINUUMS simulates the
 > fabric: topological coherence, thermodynamic (ETH) decoherence, GR×QM coupling, and
@@ -39,265 +39,265 @@ https://github.com/jonathansearch/ratiss-continuums/blob/main/images/demo-tissu.
 
 ---
 
-## 📖 Sommaire
+## 📖 Table of contents
 
-1. [La question](#-la-question)
-2. [Les trois couches : moteur, coupleurs, seuils](#-les-trois-couches--moteur-coupleurs-seuils)
-3. [Résultats majeurs (données réelles)](#-résultats-majeurs-données-réelles)
-4. [Méthode : rigueur héritée](#-méthode--rigueur-héritée)
-5. [Architecture du dépôt](#-architecture-du-dépôt)
-6. [Démarrage rapide](#-démarrage-rapide)
-7. [Carte des 9 tests](#-carte-des-9-tests)
-8. [Ce que ça ouvre](#-ce-que-ça-ouvre)
-9. [Lire dans l'ordre](#-lire-dans-lordre)
-10. [C01 : Berry à 2 qubits (piste interdite)](#-c01--berry-à-2-qubits-piste-interdite)
-11. [C02 : loi d'échelle en racine de N](#-c02--loi-déchelle-en-racine-de-n)
-12. [C03 : le triangle factorise](#-c03--le-triangle-factorise)
-13. [Rafale C04-C09 : six tests d'un coup](#-rafale-c04-c09--six-tests-dun-coup)
-14. [Filiation : né de ratiss-focal](#-filiation--né-de-ratiss-focal)
-15. [Citation, auteur, licence](#-citation-auteur-licence)
+1. [The question](#-the-question)
+2. [The three layers: engine, couplers, thresholds](#-the-three-layers--engine-couplers-thresholds)
+3. [Major results (real data)](#-major-results-real-data)
+4. [Method: inherited rigor](#-method--inherited-rigor)
+5. [Repository architecture](#-repository-architecture)
+6. [Quick start](#-quick-start)
+7. [Map of the 9 tests](#-map-of-the-9-tests)
+8. [What this opens](#-what-this-opens)
+9. [Read in order](#-read-in-order)
+10. [C01: Berry with 2 qubits (forbidden track)](#-c01--berry-with-2-qubits-forbidden-track)
+11. [C02: the root-N scaling law](#-c02--the-root-n-scaling-law)
+12. [C03: the triangle factorizes](#-c03--the-triangle-factorizes)
+13. [Burst C04-C09: six tests in one go](#-burst-c04-c09--six-tests-in-one-go)
+14. [Lineage: born of ratiss-focal](#-lineage--born-of-ratiss-focal)
+15. [Citation, author, license](#-citation-author-license)
 
 ---
 
-## ❓ La question
+## ❓ The question
 
-> **La géométrie vit-elle dans les parties ou dans le joint ?**
+> **Does geometry live in the parts or in the joint?**
 
-Pas dans les amplitudes. Pas dans les portes. Dans le **tissu** : ce qui relie,
-ce qui respire ensemble, ce qui meurt quand on sépare. Ici on ne spécule pas :
-on prépare des paires intriquées, on les fait tourner en boucles fermées, on
-mesure en base de Bell — et on regarde si la frange existe **en corrélations
-alors que chaque qubit seul est aveugle**.
+Not in the amplitudes. Not in the gates. In the **fabric**: what connects,
+what breathes together, what dies when you separate. Here we do not speculate:
+we prepare entangled pairs, we run them in closed loops, we
+measure in the Bell basis — and we watch whether the fringe exists **in correlations
+while each qubit alone is blind**.
 
-Si la cohérence collective suit des lois que les parties seules ne portent pas
-(franges jointes, scaling √N, factorisation des échelles), alors le simulateur
-qui mérite d'exister n'évolue pas des amplitudes : il **tisse**.
+If collective coherence follows laws that the parts alone do not carry
+(joint fringes, √N scaling, factorization of scales), then the simulator
+that deserves to exist does not evolve amplitudes: it **weaves**.
 
-Ce dépôt est ce simulateur, construit test par test — 9 à ce jour, 2 verrouillés
-sur QPU réel, tous reproductibles.
+This repository is that simulator, built test by test — 9 to date, 2 locked
+on real QPU, all reproducible.
 
-## 🧱 Les trois couches : moteur, coupleurs, seuils
+## 🧱 The three layers: engine, couplers, thresholds
 
-<img src="images/logo-ratiss-continuums.png" width="100%" alt="Le tissu : noeud tissé, frange au centre"/>
+<img src="images/logo-ratiss-continuums.png" width="100%" alt="The fabric: woven knot, fringe at the center"/>
 
-| Couche | Contenu | Rôle mesuré |
+| Layer | Content | Measured role |
 |---|---|---|
-| **Moteur de cohérence** | P_sig (homologie persistante), secteurs G/Q/U, topologie | **Le cœur.** P_sig croît avec N condensateurs (C05 : 0.90→1.22) ; G s'érode sous couplage (C07 : 0.13→0.0). |
-| **Coupleurs d'échelles** | GR (redshift), Thermo (ETH/flux), Berry (géométrie) | **Ce que personne n'a.** Décohérence grav en √N (C02), triangle factorisé R²>0.9996 (C03), verrou écho (C08). |
-| **Opérateurs de seuil** | Localisation, fini-N critique, horizon-conscience | **La frontière.** Pas de N_c franc (C09) : éventail critique flou près de Kc. L'horizon reste horizon. |
+| **Coherence engine** | P_sig (persistent homology), G/Q/U sectors, topology | **The heart.** P_sig grows with N capacitors (C05: 0.90→1.22); G erodes under coupling (C07: 0.13→0.0). |
+| **Scale couplers** | GR (redshift), Thermo (ETH/flux), Berry (geometry) | **What nobody else has.** Grav decoherence in √N (C02), factorized triangle R²>0.9996 (C03), echo lock (C08). |
+| **Threshold operators** | Localization, critical finite-N, horizon-awareness | **The frontier.** No sharp N_c (C09): fuzzy critical fan near Kc. The horizon stays a horizon. |
 
-**En une phrase :** le moteur tisse, les coupleurs nouent les échelles, les seuils
-disent où le tissu tient — et tout est mesuré, couches factorisées à l'appui.
+**In one sentence:** the engine weaves, the couplers knot the scales, the thresholds
+say where the fabric holds — and everything is measured, with factorized layers as proof.
 
-## 📊 Résultats majeurs (données réelles)
+## 📊 Major results (real data)
 
-Toutes les figures sont générées **à partir des JSON de résultats** du dépôt
-(scripts : `experiences/cNN_*.py` + cellules matplotlib tracées).
+All figures are generated **from the repository's result JSONs**
+(scripts: `experiences/cNN_*.py` + plotted matplotlib cells).
 
-### 1. Berry à 2 qubits : aveugle seul, frange à deux
+### 1. Berry with 2 qubits: blind alone, fringed as two
 
-<img src="images/plot_C01.png" width="100%" alt="C01 : ++ flips, +- plat, Z à 1/2"/>
+<img src="images/plot_C01.png" width="100%" alt="C01: ++ flips, +- flat, Z at 1/2"/>
 
-- **C01** (ibm_fez, 20 circuits) : orientations (++) → flips 0.99/0.02/0.99/0.02/0.99 ;
-  (+−) → plat ~0.99 (annulation) ; lecture Z → 0.48…0.52 partout.
-- Réel = simu à ~0.01. Fuite de boucle ~1e-33, γ=−φ/2 par qubit.
-- **La frange n'existe qu'en corrélations : les deux qubits respirent ensemble.**
+- **C01** (ibm_fez, 20 circuits): (++) orientations → flips 0.99/0.02/0.99/0.02/0.99;
+  (+−) → flat ~0.99 (cancellation); Z readout → 0.48…0.52 everywhere.
+- Real = sim to within ~0.01. Loop leak ~1e-33, γ=−φ/2 per qubit.
+- **The fringe exists only in correlations: the two qubits breathe together.**
 
-### 2. Décohérence gravitationnelle : 1/τ ∝ √N
+### 2. Gravitational decoherence: 1/τ ∝ √N
 
-<img src="images/plot_C02.png" width="100%" alt="C02 : C_N(t) et loi en racine de N"/>
+<img src="images/plot_C02.png" width="100%" alt="C02: C_N(t) and the root-N law"/>
 
-- **C02** : N=1/2/4/8 → τ=368.6/250.1/169.1/123.2 (théorie 339.6/240.1/169.8/120.1).
-- Contrôles Δh/G0/σω=0 → τ=∞ ; cross G0×2 → τ/2 au pour-mille (84.6/84.9).
-- **Loi flagship du simulateur : aucun simu majeur ne sort ça.**
+- **C02**: N=1/2/4/8 → τ=368.6/250.1/169.1/123.2 (theory 339.6/240.1/169.8/120.1).
+- Controls Δh/G0/σω=0 → τ=∞; cross G0×2 → τ/2 to the per-mille (84.6/84.9).
+- **Flagship law of the simulator: no major simulator outputs this.**
 
-### 3. Triangle RG×QM×Thermo : factorisation + verrou QPU
+### 3. The RG×QM×Thermo triangle: factorization + QPU lock
 
-<img src="images/plot_C03.png" width="100%" alt="C03 : a et b gardent leurs lois"/>
-<img src="images/plot_C08.png" width="100%" alt="C08 : l'écho tue a, b persiste"/>
+<img src="images/plot_C03.png" width="100%" alt="C03: a and b keep their laws"/>
+<img src="images/plot_C08.png" width="100%" alt="C08: the echo kills a, b persists"/>
 
-- **C03** : C(t)=exp(−a·t²−b·t), R²>0.9996 ; a(grav) et b(thermo) gardent leurs lois
-  à ~15 % près — **les trois échelles factorisent, pas d'interaction détectée**.
-- **C08** (ibm_kingston) : Ramsey a=1.2e−3 → écho a≈0 (refocalisé ✓), b persiste :
-  **verrou hardware de la factorisation** (canal gaussien tuable, canal expo non).
+- **C03**: C(t)=exp(−a·t²−b·t), R²>0.9996; a(grav) and b(thermo) keep their laws
+  to within ~15% — **the three scales factorize, no interaction detected**.
+- **C08** (ibm_kingston): Ramsey a=1.2e−3 → echo a≈0 (refocused ✓), b persists:
+  **hardware lock of the factorization** (gaussian channel killable, expo channel not).
 
-### Autres lois scellées
+### Other sealed laws
 
-| Loi | Test | Mesure |
+| Law | Test | Measurement |
 |---|---|---|
-| Twist nul dès N≥3 puits symétriques, R→0.85 | C04 | +1/−2/0/0/0/0 (@G0=1) |
-| P_sig croît avec N condensateurs, focal 3→2 | C05 | 0.90→1.22 |
-| Mémoire : chute t_half~15 puis plancher (ni expo ni puissance) | C06 | R²~0 assumé |
-| Couplage inter-tores érode G : 0.13→0.02→0.0 | C07 | dose-dépendant, N plat |
-| Pas de seuil franc ; éventail critique près de Kc | C09 | K=3 plat, K=0.35 flou |
+| Zero twist from N≥3 symmetric wells on, R→0.85 | C04 | +1/−2/0/0/0/0 (@G0=1) |
+| P_sig grows with N capacitors, focal 3→2 | C05 | 0.90→1.22 |
+| Memory: fall t_half~15 then floor (neither exp nor power) | C06 | R²~0 assumed |
+| Inter-torus coupling erodes G: 0.13→0.02→0.0 | C07 | dose-dependent, N flat |
+| No sharp threshold; critical fan near Kc | C09 | K=3 flat, K=0.35 fuzzy |
 
-## 🔬 Méthode : rigueur héritée
+## 🔬 Method: inherited rigor
 
-Héritée de ratiss-focal, non négociable :
+Inherited from ratiss-focal, non-negotiable:
 
-1. **Question écrite avant la mesure.** Chaque C-test déclare sa question dans son
-   docstring *avant* exécution. Pas de question ajustée après coup.
-2. **Contrôles tueurs.** Chaque loi a ses contrôles d'extinction (pilier retiré →
-   effet mort : τ=∞, a=0, twist=0). Un test sans contrôle est interdit.
-3. **Échecs publiés.** C06 (ni expo ni puissance), C09 (pas de seuil), C03-run-1
-   (bruit ±50 %, poubelle assumée) : scellés tels quels dans PROTOCOLES + JOURNAL.
-4. **Simu = modèle, QPU = juge.** Les simus calibrent la chaîne (graines fixées) ;
-   seuls les verrous hardware (C01 fez, C08 kingston) scellent une loi.
-5. **Zéro neurone.** `numpy + qiskit + ripser` suffisent. Si le tissu tient ici,
-   il ne doit rien au deep learning.
-6. **Observation, pas de verdict forcé.** On décrit ce qui est mesuré (facteur,
-   plancher, éventail) ; on ne conclut pas au-delà des barres d'erreur.
+1. **Question written before the measurement.** Every C-test declares its question in its
+   docstring *before* execution. No question adjusted after the fact.
+2. **Killer controls.** Every law has its extinction controls (pillar removed →
+   effect dead: τ=∞, a=0, twist=0). A test without a control is forbidden.
+3. **Failures published.** C06 (neither exp nor power), C09 (no threshold), C03-run-1
+   (noise ±50%, owned garbage): sealed as is in PROTOCOLES + JOURNAL.
+4. **Sim = model, QPU = judge.** The sims calibrate the chain (fixed seeds);
+   only the hardware locks (C01 fez, C08 kingston) seal a law.
+5. **Zero neurons.** `numpy + qiskit + ripser` are enough. If the fabric holds here,
+   it owes nothing to deep learning.
+6. **Observation, no forced verdict.** We describe what is measured (factor,
+   floor, fan); we do not conclude beyond the error bars.
 
-## 🗂️ Architecture du dépôt
+## 🗂️ Repository architecture
 
 ```
 ratiss-continuums/
-├── README.md                  ← vous êtes ici (vitrine)
-├── PROTOCOLES.md              ← les 9 C-tests (méthode + observé)
-├── JOURNAL.md                 ← carnet de bord daté (dont les bugs assumés)
+├── README.md                  ← you are here (showcase)
+├── PROTOCOLES.md              ← the 9 C-tests (method + observed)
+├── JOURNAL.md                 ← dated logbook (including owned bugs)
 ├── LICENSE                    ← MIT
-├── experiences/               ← c01_berry2.py … c09_seuil_N.py (sim + QPU, graines fixées)
-├── resultats/                 ← c01_*.json … c09.json (données brutes)
-├── organes/                   ← conteneur, condensateur, porteurs (copies focales)
-├── univers/                   ← A.json (config TEST-04 portée)
-└── images/                    ← plot_C01.png … plot_C09.png (figures des JSON)
+├── experiences/               ← c01_berry2.py … c09_seuil_N.py (sim + QPU, fixed seeds)
+├── resultats/                 ← c01_*.json … c09.json (raw data)
+├── organes/                   ← container, capacitor, carriers (focal copies)
+├── univers/                   ← A.json (TEST-04 scoped config)
+└── images/                    ← plot_C01.png … plot_C09.png (figures from the JSONs)
 ```
 
-## 🚀 Démarrage rapide
+## 🚀 Quick start
 
 ```bash
-# 1. Cloner
+# 1. Clone
 git clone https://github.com/jonathansearch/ratiss-continuums.git
 cd ratiss-continuums
 
-# 2. Dépendances (léger : pas de GPU)
+# 2. Dependencies (light: no GPU)
 pip install numpy matplotlib ripser qiskit qiskit-aer qiskit-ibm-runtime
 
-# 3. Reproduire un test virtuel (ex : scaling √N, ~1 s)
+# 3. Replay a virtual test (e.g.: √N scaling, ~1 s)
 python3 experiences/c02_decoN.py
 
-# 4. Reproduire un test QPU en simu (ex : Berry-2q, ~10 s)
+# 4. Replay a QPU test in sim (e.g.: Berry-2q, ~10 s)
 python3 experiences/c01_berry2.py
 
-# 5. Verrou hardware (clé IBM gratuite, jamais commitée)
+# 5. Hardware lock (free IBM key, never committed)
 python3 experiences/c08_verrou_QPU.py --reel $IBMQ_TOKEN
 ```
 
-> ⚠️ **Coûts connus** : C05/C07 (ripser, homologie) ≈ minutes ; C06 (TB=10⁴) ≈ 40 s ;
-> jobs QPU ≈ 1–2 min + file d'attente. Graines fixées : résultats bit-reproductibles
-> (même machine, mêmes versions mineures).
+> ⚠️ **Known costs**: C05/C07 (ripser, homology) ≈ minutes; C06 (TB=10⁴) ≈ 40 s;
+> QPU jobs ≈ 1–2 min + queue. Fixed seeds: bit-reproducible results
+> (same machine, same minor versions).
 
-## 🗺️ Carte des 9 tests
+## 🗺️ Map of the 9 tests
 
-| Test | Question | Réponse mesurée |
+| Test | Question | Measured answer |
 |---|---|---|
-| C01 | Berry à 2 qubits : les franges respirent-elles ensemble ? | **Oui** (fez : ++ flips, +− plat, Z aveugle) |
-| C02 | RG×QM à N qubits : loi d'échelle ? | **1/τ ∝ √N** (N=1→8) |
-| C03 | RG×QM×Thermo : couplage ou factorisation ? | **Factorisation** (R²>0.9996) |
-| C04 | Twist à N puits ? | **0 dès N≥3** (symétrie) |
-| C05 | P_sig à N condensateurs ? | **0.90→1.22**, focal 3→2 |
-| C06 | Mémoire longue : expo ou puissance ? | **Ni l'une ni l'autre** (plancher) |
-| C07 | G à N corps ? | **Couplage tue G** (0.13→0.0), N plat |
-| C08 | Triangle verrouillé hardware ? | **Oui** (kingston : écho tue a) |
-| C09 | Seuil de cohérence à N fini ? | **Pas de seuil franc** (éventail flou) |
+| C01 | Berry with 2 qubits: do the fringes breathe together? | **Yes** (fez: ++ flips, +− flat, Z blind) |
+| C02 | GR×QM at N qubits: scaling law? | **1/τ ∝ √N** (N=1→8) |
+| C03 | GR×QM×Thermo: coupling or factorization? | **Factorization** (R²>0.9996) |
+| C04 | Twist at N wells? | **0 from N≥3 on** (symmetry) |
+| C05 | P_sig at N capacitors? | **0.90→1.22**, focal 3→2 |
+| C06 | Long memory: exp or power? | **Neither** (floor) |
+| C07 | G at N bodies? | **Coupling kills G** (0.13→0.0), N flat |
+| C08 | Triangle locked in hardware? | **Yes** (kingston: echo kills a) |
+| C09 | Coherence threshold at finite N? | **No sharp threshold** (fuzzy fan) |
 
-Détail : [`PROTOCOLES.md`](PROTOCOLES.md) · Récit : [`JOURNAL.md`](JOURNAL.md)
+Details: [`PROTOCOLES.md`](PROTOCOLES.md) · Story: [`JOURNAL.md`](JOURNAL.md)
 
-## 🌅 Ce que ça ouvre
+## 🌅 What this opens
 
-**Le simulateur du tissu.**
-- Des **couches d'échelles indépendantes qui se multiplient** (C03+C08) : architecture
-  validée par la mesure — on ajoute une échelle sans réécrire le moteur.
-- Des **lois que les simus d'amplitudes ne portent pas** : scaling grav √N (C02),
-  franges purement corrélées (C01), érosion de G par couplage (C07).
-- Des **verrous hardware systématiques** : chaque loi virtuelle peut demander son
-  jumeau QPU (recette C08 : séquence qui tue un canal, fit 2-paramètres).
+**The simulator of the fabric.**
+- **Independent scale layers that multiply** (C03+C08): architecture
+  validated by measurement — you add a scale without rewriting the engine.
+- **Laws that amplitude simulators do not carry**: grav scaling √N (C02),
+  purely correlated fringes (C01), G erosion by coupling (C07).
+- **Systematic hardware locks**: every virtual law can request its
+  QPU twin (C08 recipe: sequence that kills one channel, 2-parameter fit).
 
-**Recherche fondamentale.**
-- La géométrie comme **observable de corrélations** (C01) : brique testable pour
-  l'hypothèse « super-intrication plate » du chef — exigée, mesurée, pas postulée.
-- La mémoire comme **plancher, pas loi** (C06) : borne dure pour tout modèle de
-  persistance collective.
-- Le seuil comme **éventail critique** (C09) : pas de N_c magique — résultat négatif
-  qui protège le programme des faux miracles.
+**Fundamental research.**
+- Geometry as an **observable of correlations** (C01): testable brick for
+  the chief's "flat super-entanglement" hypothesis — demanded, measured, not postulated.
+- Memory as a **floor, not a law** (C06): hard bound for any model of
+  collective persistence.
+- The threshold as a **critical fan** (C09): no magic N_c — a negative result
+  that protects the program from fake miracles.
 
-**Épistémologie.**
-- La rafale C04→C09 comme preuve qu'on peut aller vite **sans tricher** : contrôles,
-  bugs assumés (C09 indentation, C07 barre N=1, .pyc commis puis retirés), nuls publiés.
+**Epistemology.**
+- The C04→C09 burst as proof that you can go fast **without cheating**: controls,
+  owned bugs (C09 indentation, C07 N=1 bar, .pyc committed then removed), nulls published.
 
-## 📚 Lire dans l'ordre
+## 📚 Read in order
 
-1. [`PROTOCOLES.md`](PROTOCOLES.md) — les 9 tests, un par un (10 minutes).
-2. [`JOURNAL.md`](JOURNAL.md) — le récit vrai (rafale, bugs, verrous).
-3. `experiences/c01_berry2.py` — le test-signature, sim + QPU en un fichier.
-4. `organes/` + `univers/A.json` — le moteur porté (filiation focal).
-5. [ratiss-focal](https://github.com/jonathansearch/ratiss-focal) — le socle gelé (94 tests, 7 ponts).
+1. [`PROTOCOLES.md`](PROTOCOLES.md) — the 9 tests, one by one (10 minutes).
+2. [`JOURNAL.md`](JOURNAL.md) — the true story (burst, bugs, locks).
+3. `experiences/c01_berry2.py` — the signature test, sim + QPU in one file.
+4. `organes/` + `univers/A.json` — the ported engine (focal lineage).
+5. [ratiss-focal](https://github.com/jonathansearch/ratiss-focal) — the frozen base (94 tests, 7 bridges).
 
-## 🕸️ C01 : Berry à 2 qubits (piste interdite)
+## 🕸️ C01: Berry with 2 qubits (forbidden track)
 
-Paire de Bell + boucle fermée v2 sur chaque qubit (fuite ~1e-33, γ=−φ/2),
-orientations (++)/(+−), lectures Bell et Z. 20 circuits, sim + ibm_fez.
-- (++) : frange doublée, flips complets à π/2 et 3π/2 (0.99/0.02 réel).
-- (+−) : annulation totale, ~0.99 plat — les sens opposés se neutralisent.
-- Z : 1/2 partout — **chaque qubit seul ne voit rien, la paire voit tout.**
+Bell pair + closed loop v2 on each qubit (leak ~1e-33, γ=−φ/2),
+(++)/(+−) orientations, Bell and Z readouts. 20 circuits, sim + ibm_fez.
+- (++): doubled fringe, full flips at π/2 and 3π/2 (0.99/0.02 real).
+- (+−): total cancellation, ~0.99 flat — opposite directions neutralize each other.
+- Z: 1/2 everywhere — **each qubit alone sees nothing, the pair sees everything.**
 
-<img src="images/plot_C01.png" width="100%" alt="C01 : franges jointes, aveugle en local"/>
+<img src="images/plot_C01.png" width="100%" alt="C01: joint fringes, locally blind"/>
 
-> Le pli est un tissu : la géométrie vit dans le joint, pas dans les parties.
+> The fold is a fabric: geometry lives in the joint, not in the parts.
 
-## ⚛️ C02 : loi d'échelle en racine de N
+## ⚛️ C02: the root-N scaling law
 
-Superposition à N qubits, branches à deux hauteurs, fréquences internes
-indépendantes, phase relative intégrée pas à pas. τ_N = √2/(Δf·σω·√N).
-- N=1→8 : 368.6/250.1/169.1/123.2, théorie à 0.4–8 %.
-- 3 contrôles à l'infini, cross G0×2 → τ/2 au pour-mille.
+Superposition at N qubits, branches at two heights, independent internal
+frequencies, relative phase integrated step by step. τ_N = √2/(Δf·σω·√N).
+- N=1→8: 368.6/250.1/169.1/123.2, theory to within 0.4–8%.
+- 3 controls at infinity, cross G0×2 → τ/2 to the per-mille.
 
-<img src="images/plot_C02.png" width="100%" alt="C02 : scaling sqrt(N)"/>
+<img src="images/plot_C02.png" width="100%" alt="C02: sqrt(N) scaling"/>
 
-> La décohérence gravitationnelle compte ses qubits avant de frapper : en √N.
+> Gravitational decoherence counts its qubits before striking: in √N.
 
-## 🔺 C03 : le triangle factorise
+## 🔺 C03: the triangle factorizes
 
-Base C02 + flux entropique ETH (Wiener par branche — « pas de flux, pas de temps »).
-C(t)=exp(−a·t²−b·t), M=2000 × 5 graines (M=400 × 1 graine = bruit ±50 %, poubelle assumée).
-- R²>0.9996 partout ; a ne bouge pas avec κ, b ne bouge pas avec G0.
-- Chaque pilier garde sa loi : **le triangle ne se couple pas, il se multiplie.**
+Base C02 + ETH entropy flux (Wiener per branch — "no flux, no time").
+C(t)=exp(−a·t²−b·t), M=2000 × 5 seeds (M=400 × 1 seed = ±50% noise, owned garbage).
+- R²>0.9996 everywhere; a does not move with κ, b does not move with G0.
+- Each pillar keeps its law: **the triangle does not couple, it multiplies.**
 
-<img src="images/plot_C03.png" width="100%" alt="C03 : factorisation"/>
+<img src="images/plot_C03.png" width="100%" alt="C03: factorization"/>
 
-> Trois piliers, zéro jalousie — le produit fait le reste.
+> Three pillars, zero jealousy — the product does the rest.
 
-## ⚡ Rafale C04-C09 : six tests d'un coup
+## ⚡ Burst C04-C09: six tests in one go
 
-Sur un ordre du chef (« fais tous une fois »), les six chantiers restants exécutés,
-figurés, documentés et poussés en une session — organes portés par copies, bugs assumés.
-- **C04** : twist +1/−2 puis 0/0/0 — la symétrie N≥3 tue le twist, R→0.85.
-- **C05** : P_sig 0.90→1.22 (N=1→8), focalisation 3→2 — plus de condensateurs, plus tôt.
-- **C06** : t_half~15 puis plancher fluctuant — la mémoire n'a pas de loi, elle a un sol.
-- **C07** : G 0.13→0.02→0.0 sous couplage — interagir, c'est s'éroder (fusion en blob).
-- **C08** : écho tue a (1.2e−3→~0), b persiste — C03 verrouillé sur kingston.
-- **C09** : K=3 plat (pas de seuil), K=0.35 éventail flou — l'horizon reste horizon.
+On one order from the chief ("do all of them once"), the six remaining projects executed,
+figured, documented and pushed in one session — organs ported by copies, bugs owned.
+- **C04**: twist +1/−2 then 0/0/0 — N≥3 symmetry kills the twist, R→0.85.
+- **C05**: P_sig 0.90→1.22 (N=1→8), focusing 3→2 — more capacitors, earlier.
+- **C06**: t_half~15 then fluctuating floor — memory has no law, it has a ground.
+- **C07**: G 0.13→0.02→0.0 under coupling — to interact is to erode (blob fusion).
+- **C08**: echo kills a (1.2e−3→~0), b persists — C03 locked on kingston.
+- **C09**: K=3 flat (no threshold), K=0.35 fuzzy fan — the horizon stays a horizon.
 
-<img src="images/plot_C04.png" width="100%" alt="C04 : twist N"/>
-<img src="images/plot_C05.png" width="100%" alt="C05 : N condensateurs"/>
-<img src="images/plot_C06.png" width="100%" alt="C06 : mémoire longue"/>
-<img src="images/plot_C07.png" width="100%" alt="C07 : G N-corps"/>
-<img src="images/plot_C08.png" width="100%" alt="C08 : verrou QPU"/>
-<img src="images/plot_C09.png" width="100%" alt="C09 : seuil N"/>
+<img src="images/plot_C04.png" width="100%" alt="C04: twist N"/>
+<img src="images/plot_C05.png" width="100%" alt="C05: N capacitors"/>
+<img src="images/plot_C06.png" width="100%" alt="C06: long memory"/>
+<img src="images/plot_C07.png" width="100%" alt="C07: G N-body"/>
+<img src="images/plot_C08.png" width="100%" alt="C08: QPU lock"/>
+<img src="images/plot_C09.png" width="100%" alt="C09: N threshold"/>
 
-> Six tests, six réponses, zéro détour — la rafale a parlé.
+> Six tests, six answers, zero detour — the burst has spoken.
 
-## 🧬 Filiation : né de ratiss-focal
+## 🧬 Lineage: born of ratiss-focal
 
-RATISS CONTINUUMS naît de [ratiss-focal](https://github.com/jonathansearch/ratiss-focal)
-(94 tests, 7 ponts QPU, phases 1→21) — **gelé, socle publié, on n'y touche plus**.
-Ici on transforme : mêmes organes (copies `organes/` + `univers/A.json`, jamais de
-déplacements), nouvel animal. Filiation tracée test par test dans PROTOCOLES et JOURNAL.
-- Portés : boucle Berry fermée v2 (C01), redshift + spread (C02/C03), anneau twist (C04),
-  organes focaux + config A (C05/C06/C07), recette Ramsey/écho (C08), Kuramoto (C09).
-- Posé par **Jonathan Evina** (premier boss), construit avec **Arena Agent** (second boss).
+RATISS CONTINUUMS is born of [ratiss-focal](https://github.com/jonathansearch/ratiss-focal)
+(94 tests, 7 QPU bridges, phases 1→21) — **frozen, published base, we no longer touch it**.
+Here we transform: same organs (copies in `organes/` + `univers/A.json`, never moves),
+new animal. Lineage traced test by test in PROTOCOLES and JOURNAL.
+- Ported: closed Berry loop v2 (C01), redshift + spread (C02/C03), twist ring (C04),
+  focal organs + A config (C05/C06/C07), Ramsey/echo recipe (C08), Kuramoto (C09).
+- Set in motion by **Jonathan Evina** (first boss), built with **Arena Agent** (second boss).
 
-## 📝 Citation, auteur, licence
+## 📝 Citation, author, license
 
 ```bibtex
 @software{ratiss_continuums_2026,
@@ -312,11 +312,12 @@ déplacements), nouvel animal. Filiation tracée test par test dans PROTOCOLES e
 
 <div align="center">
 
-**RATISS Labs** — *Aveugle seul, frange à deux : la devise du tissu.* 🌌
+**RATISS Labs** — *Blind alone, fringed as two: the motto of the fabric.* 🌌
 
-Posé par **Jonathan Evina** · Septembre 2026 · **Licence MIT** (voir [LICENSE](LICENSE)) —
-simulateur ouvert, reproductible publiquement, prêt pour évaluation externe.
+Set in motion by **Jonathan Evina** · September 2026 · **MIT License** (see [LICENSE](LICENSE)) —
+open simulator, publicly reproducible, ready for external evaluation.
 
 <img src="images/logo-ratiss-labs.png" width="120" alt="RATISS Labs"/>
 
 </div>
+
